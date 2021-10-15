@@ -139,7 +139,7 @@ class SecretsMigrationTest {
 
     // Ensure that the dry run isn't modifying anything.
     assertTrue(writeToConfigPersistence.dumpConfigs().isEmpty(), "Write config should be empty before we use it (sanity check), but found keys: "
-        + writeToConfigPersistence.dumpConfigs().keySet().toString());
+        + writeToConfigPersistence.dumpConfigs().keySet());
 
     final SecretsMigration dryRunMigration = new SecretsMigration(readFromConfigPersistence, writeToConfigPersistence, true);
     dryRunMigration.run();
